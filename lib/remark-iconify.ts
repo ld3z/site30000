@@ -35,9 +35,37 @@ const remarkIconify: Plugin<[], Root> = () => {
                 }
 
                 // Split prefix from name at the first hyphen
-                const hyphenIdx = iconName.indexOf('-');
-                const prefix = iconName.slice(0, hyphenIdx);
-                const name = iconName.slice(hyphenIdx + 1);
+                let hyphenIdx = iconName.indexOf('-');
+                let prefix = iconName.slice(0, hyphenIdx);
+                let name = iconName.slice(hyphenIdx + 1);
+
+                // Handle known hyphenated collections that would otherwise be split incorrectly
+                const knownPrefixes = [
+                    'simple-icons',
+                    'material-symbols',
+                    'heroicons-solid',
+                    'heroicons-outline',
+                    'line-md',
+                    'flat-color-icons',
+                    'fluent-emoji',
+                    'skill-icons',
+                    'vscode-icons',
+                    'hugeicons',
+                    'icon-park',
+                    'icon-park-outline',
+                    'icon-park-solid',
+                    'icon-park-twotone',
+                    'streamline-stickies-color'
+                ];
+
+                for (const kp of knownPrefixes) {
+                    if (iconName.startsWith(`${kp}-`)) {
+                        prefix = kp;
+                        name = iconName.slice(kp.length + 1);
+                        break;
+                    }
+                }
+
                 const className = `icon-[${prefix}--${name}]`;
 
                 // Create the icon element as an MDX JSX inline element

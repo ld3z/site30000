@@ -36,11 +36,38 @@ function walk(dir, files = []) {
 }
 
 function iconClassFromShortcut(shortcut) {
-  const hyphenIndex = shortcut.indexOf("-");
+  let hyphenIndex = shortcut.indexOf("-");
   if (hyphenIndex === -1) return null;
 
-  const prefix = shortcut.slice(0, hyphenIndex);
-  const name = shortcut.slice(hyphenIndex + 1);
+  let prefix = shortcut.slice(0, hyphenIndex);
+  let name = shortcut.slice(hyphenIndex + 1);
+
+  const knownPrefixes = [
+    'simple-icons',
+    'material-symbols',
+    'heroicons-solid',
+    'heroicons-outline',
+    'line-md',
+    'flat-color-icons',
+    'fluent-emoji',
+    'skill-icons',
+    'vscode-icons',
+    'hugeicons',
+    'icon-park',
+    'icon-park-outline',
+    'icon-park-solid',
+    'icon-park-twotone',
+    'streamline-stickies-color'
+  ];
+
+  for (const kp of knownPrefixes) {
+    if (shortcut.startsWith(`${kp}-`)) {
+      prefix = kp;
+      name = shortcut.slice(kp.length + 1);
+      break;
+    }
+  }
+
   return `icon-[${prefix}--${name}]`;
 }
 
