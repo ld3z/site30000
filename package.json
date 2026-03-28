@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
+    "dev": "node scripts/dev.mjs",
     "start": "serve out",
     "types:check": "fumadocs-mdx && next typegen && tsc --noEmit",
+    "prebuild": "node scripts/generate-icon-sources.mjs",
+    "pretypes:check": "node scripts/generate-icon-sources.mjs",
     "postinstall": "fumadocs-mdx",
     "lint": "biome check",
     "format": "biome format --write"
