@@ -8,6 +8,9 @@ const config = {
   output: 'export',
   basePath: '/site30000',
   reactStrictMode: true,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: '/site30000',
+  },
 };
 
 export default withMDX(config);

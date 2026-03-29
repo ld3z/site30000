@@ -12,13 +12,14 @@ import {
 } from 'fumadocs-ui/components/dialog/search';
 import { useDocsSearch } from 'fumadocs-core/search/client';
 import { useI18n } from 'fumadocs-ui/contexts/i18n';
+import { basePath } from '@/lib/base-path';
 
 export default function DefaultSearchDialog(props: SharedProps) {
   const { locale } = useI18n();
   const { search, setSearch, query } = useDocsSearch({
     type: 'static',
     locale,
-    from: '/site30000/api/search',
+    from: `${basePath}/api/search`,
   });
 
   return (
