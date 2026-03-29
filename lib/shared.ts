@@ -1,5 +1,5 @@
 export const appName = 'Site30000';
-export const docsRoute = '/site30000/docs';
+export const docsRoute = '/docs';
 export const docsImageRoute = '/site30000/og/docs';
 export const docsContentRoute = '/site30000/llms.mdx/docs';
 
