@@ -7,6 +7,7 @@ const config = {
   serverExternalPackages: ['@takumi-rs/image-response'],
   output: 'export',
   basePath: '/site30000',
+  images: { unoptimized: true },
   reactStrictMode: true,
   env: {
     NEXT_PUBLIC_BASE_PATH: '/site30000',
