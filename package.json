@@ -15,19 +15,20 @@
   },
   "dependencies": {
     "@orama/orama": "^3.1.18",
-    "fumadocs-core": "16.7.16",
-    "fumadocs-mdx": "14.3.0",
-    "fumadocs-ui": "16.7.16",
+    "@takumi-rs/image-response": "^1.0.14",
+    "fumadocs-core": "16.8.0",
+    "fumadocs-mdx": "14.3.1",
+    "fumadocs-ui": "16.8.0",
     "lucide-react": "^1.8.0",
     "next": "16.2.4",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "tailwind-merge": "^3.5.0",
-    "@takumi-rs/image-response": "^1.0.14"
+    "remark-directive": "^4.0.0",
+    "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.12",
-    "@iconify/json": "^2.2.463",
+    "@iconify/json": "^2.2.464",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/postcss": "^4.2.2",
     "@types/mdx": "^2.0.13",
