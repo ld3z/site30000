@@ -1,7 +1,7 @@
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 import type { MDXComponents } from 'mdx/types';
 
-import { Tooltip } from '@/components/mdx-tooltip';
+import { Tooltip } from '@/components/tooltip';
 
 export function getMDXComponents(components?: MDXComponents) {
   return {
