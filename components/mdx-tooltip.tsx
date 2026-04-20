@@ -96,7 +96,7 @@ export function Tooltip({ id, content, children, className, ...props }: TooltipP
   }, [open]);
 
   return (
-    <span ref={rootRef} className={cn('relative inline-flex items-center align-middle', className)} {...props}>
+    <span ref={rootRef} className={cn('relative inline-block align-baseline pr-[1.5em]', className)} {...props}>
       <span>{children}</span>
       <button
         type="button"
@@ -104,7 +104,7 @@ export function Tooltip({ id, content, children, className, ...props }: TooltipP
         aria-expanded={open}
         aria-controls={`tooltip-${id}`}
         onClick={() => setOpen((value) => !value)}
-        className="relative ml-0.5 inline-flex size-[1.2em] shrink-0 translate-y-[0.08em] items-center justify-center rounded-full border border-fd-muted-foreground/25 bg-fd-muted text-[0.95em] leading-none text-fd-muted-foreground transition-colors hover:bg-fd-primary hover:text-fd-primary-foreground focus-visible:bg-fd-primary focus-visible:text-fd-primary-foreground"
+        className="absolute end-0 top-1/2 inline-flex size-[1.2em] shrink-0 -translate-y-1/2 items-center justify-center rounded-full border border-fd-muted-foreground/25 bg-fd-muted text-[0.95em] leading-none text-fd-muted-foreground transition-colors hover:bg-fd-primary hover:text-fd-primary-foreground focus-visible:bg-fd-primary focus-visible:text-fd-primary-foreground"
       >
         <Info className="size-[0.85em]" aria-hidden="true" />
       </button>
