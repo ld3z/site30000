@@ -11,7 +11,7 @@ export function CaptionImage({ alt, title, className, ...props }: CaptionImagePr
   const caption = title ?? alt;
 
   return (
-    <span className="my-6 flex flex-col items-center gap-0">
+    <span className="my-4 block text-center">
       <ImageZoom
         {...(props as any)}
         alt={alt}
@@ -19,7 +19,7 @@ export function CaptionImage({ alt, title, className, ...props }: CaptionImagePr
         className={cn('max-w-full rounded-xl border bg-fd-background', className)}
       />
       {caption ? (
-        <span className="max-w-2xl text-center text-sm leading-tight text-fd-muted-foreground">
+        <span className="mt-2 block max-w-2xl text-sm leading-tight text-fd-muted-foreground">
           {caption}
         </span>
       ) : null}
