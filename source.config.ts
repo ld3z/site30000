@@ -1,4 +1,6 @@
 import { defineConfig, defineDocs } from 'fumadocs-mdx/config';
+import remarkDirective from 'remark-directive';
+import { remarkDirectiveAdmonition } from 'fumadocs-core/mdx-plugins';
 import { metaSchema, pageSchema } from 'fumadocs-core/source/schema';
 import remarkIconify from './lib/remark-iconify';
 
@@ -19,6 +21,6 @@ export const docs = defineDocs({
 
 export default defineConfig({
   mdxOptions: {
-    remarkPlugins: [remarkIconify],
+    remarkPlugins: [remarkDirective, remarkDirectiveAdmonition, remarkIconify],
   },
 });
